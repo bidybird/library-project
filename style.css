@@ -1,3 +1,7 @@
+#register {
+    visibility: hidden;
+}
+
 .shownBook {
     background-color: lightblue;
     border: 2px solid black;

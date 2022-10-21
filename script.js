@@ -86,9 +86,9 @@ const container = document.querySelector("#container");
 const formBtn = document.querySelector("#newBook");
 formBtn.addEventListener("click", () => {
   const hideForm = document.getElementById("register");
-  if (hideForm.style.visibility !== "hidden") {
-    hideForm.style.visibility = "hidden";
-  } else {
+  if (hideForm.style.visibility !== "visible") {
     hideForm.style.visibility = "visible";
+  } else {
+    hideForm.style.visibility = "hidden";
   }
 });
