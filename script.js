@@ -20,6 +20,7 @@ function addBookToLibrary(titleNew, authorNew, pagesNew, readNew) {
   myLibrary.push(newBook);
 }
 
+//Clears all elements with id shelf
 function clearShelves() {
   const shelfId = document.getElementById("shelf");
   if (shelfId !== null) {
@@ -46,10 +47,16 @@ function bookDisplay(libraryArray) {
     const removeButton = document.createElement("button");
     removeButton.classList.toggle("removeButton");
     removeButton.textContent = "Remove book.";
+    removeButton.addEventListener("click", function (e) {
+      e.target.parentNode.parentNode.remove();
+    });
 
     const readButton = document.createElement("button");
     readButton.classList.toggle("readButton");
     readButton.textContent = "read/not";
+    readButton.addEventListener("click", function (e) {
+      console.log(e.target.parentNode);
+    });
 
     buttonBox.appendChild(removeButton);
 
@@ -62,7 +69,6 @@ function bookDisplay(libraryArray) {
   shelves.appendChild(shelf);
 }
 
-let titleNew = "whoops";
 const form = document.getElementById("register");
 
 form.addEventListener("submit", (event) => {
@@ -77,12 +83,7 @@ form.addEventListener("submit", (event) => {
   bookDisplay(myLibrary);
 });
 
-console.log(myLibrary);
-console.log(titleNew);
-
 //make a button that un-hides the form
-const container = document.querySelector("#container");
-
 const formBtn = document.querySelector("#newBook");
 formBtn.addEventListener("click", () => {
   const hideForm = document.getElementById("register");
@@ -92,3 +93,5 @@ formBtn.addEventListener("click", () => {
     hideForm.style.visibility = "hidden";
   }
 });
+
+// give the remove button functionality
