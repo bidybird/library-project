@@ -2,19 +2,33 @@
 .shownBook {
     background-color: lightblue;
     border: 2px solid black;
-    margin: 10px;
-    padding: 5px;
-    height: 60px;
+    margin: 5px;
+    padding: 5px 8px 5px 5px;
+    height: 80px;
     width: 300px;
     word-wrap: normal;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 76px;
+    align-content: space-between;
+}
+
+.removeButton {
+    width: 80px;
+    height: 40px;
+    padding: 4px;
+    margin: 4px;
 }
 
 .readButton {
-    width: 70px;
-    height: 50px;
+    width: 80px;
+    height: 30px;
     padding: 4px;
-    align-self: center;
+    margin: 4px;
 }

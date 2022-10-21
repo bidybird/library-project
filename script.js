@@ -11,7 +11,7 @@ function Book(title, author, pages, read) {
 
 //Make a prototype for book so that all its children can display their content in text on a div
 Book.prototype.displayContent = function () {
-  return `${this.title} by ${this.author} is ${this.pages} pages long, ${this.read}.`;
+  return `${this.title} by ${this.author}, ${this.pages} pages. ${this.read}.`;
 };
 
 //Constructor function used to make new books and push into an array
@@ -40,11 +40,22 @@ function bookDisplay(libraryArray) {
     card.classList.toggle("shownBook");
     card.textContent = `${libraryArray[i].displayContent()}`;
 
+    const buttonBox = document.createElement("div");
+    buttonBox.classList.toggle("buttonBox");
+
+    const removeButton = document.createElement("button");
+    removeButton.classList.toggle("removeButton");
+    removeButton.textContent = "Remove book.";
+
     const readButton = document.createElement("button");
     readButton.classList.toggle("readButton");
-    readButton.textContent = "read / not";
+    readButton.textContent = "read/not";
 
-    card.appendChild(readButton);
+    buttonBox.appendChild(removeButton);
+
+    buttonBox.appendChild(readButton);
+
+    card.appendChild(buttonBox);
 
     shelf.appendChild(card);
   }
