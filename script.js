@@ -62,24 +62,6 @@ function bookDisplay(libraryArray) {
   shelves.appendChild(shelf);
 }
 
-const theHobbit = new Book("The Hobbit", "Tolkien", "285", "read");
-
-const theLordOfTheRings = new Book(
-  "The Lord of the Rings",
-  "Tolkien",
-  "325",
-  "not read yet"
-);
-
-const sutree = new Book("Sutree", "Mr. Guy", "200", "not read yet");
-
-const brothersOfBlood = new Book(
-  "Brothers of Blood",
-  "Tristan",
-  "165",
-  "not read yet"
-);
-
 let titleNew = "whoops";
 const form = document.getElementById("register");
 
@@ -98,7 +80,15 @@ form.addEventListener("submit", (event) => {
 console.log(myLibrary);
 console.log(titleNew);
 
-// let titleNew = titleV.value;
-// let authorNew = authorV.value;
-// let pagesNew = pagesV.value;
-// let readNew = readV.value;
+//make a button that un-hides the form
+const container = document.querySelector("#container");
+
+const formBtn = document.querySelector("#newBook");
+formBtn.addEventListener("click", () => {
+  const hideForm = document.getElementById("register");
+  if (hideForm.style.visibility !== "hidden") {
+    hideForm.style.visibility = "hidden";
+  } else {
+    hideForm.style.visibility = "visible";
+  }
+});
